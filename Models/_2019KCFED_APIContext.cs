@@ -15,7 +15,7 @@ namespace _2019KCFED_API.Models
         }
 
         public DbSet<User> Users { get; set; }
-        //public DbSet<Business> Business { get; set; }
+        public DbSet<Business> Businesses { get; set; }
 
 
 
