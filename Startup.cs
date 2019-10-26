@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using _2019KCFED_API.Models;
 
 namespace _2019KCFED_API
 {
@@ -26,6 +28,9 @@ namespace _2019KCFED_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<DbConnection>(opt =>
+                opt.UseInMemoryDatabase("Database"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

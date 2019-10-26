@@ -9,7 +9,7 @@ namespace _2019KCFED_API.Models
 {
     public class DbConnection : DbContext
     {
-        public DbConnection():base()
+        public DbConnection(DbContextOptions<DbConnection> options) : base(options)
         {
 
         }
