@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2019KCFED_API.Models
 {
@@ -13,7 +15,7 @@ namespace _2019KCFED_API.Models
 
         public string ShortDescription { get; set; }
         public string BusinessResume { get; set; }
-        public int OwnerId { get; set; }
+        public virtual User user { get; set; }
         public int CandidateId { get; set; }
         public ICollection<string> Category { get; set; }
         

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace _2019KCFED_API.Models
@@ -16,10 +18,13 @@ namespace _2019KCFED_API.Models
         public DateTime DateCreated { get; set; }
         public string ShortDescription { get; set; }
         public int Location { get; set; }
+        public DateTime LastLogedIn { get; set; }
 
         /// <summary>
         /// Collection for database
         /// </summary>
+
+        public ICollection<File> Files { get; set; }
         public ICollection<int> ImageId { get; set; }
         public ICollection<int> BusinessID { get; set; }
         public ICollection<Links> Links { get; set; }
