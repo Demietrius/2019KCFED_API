@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace _2019KCFED_API.Models
 {
     public class User
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public DateTime DateCreated { get; set; }
         public string ShortDescription { get; set; }
         public int Location { get; set; }
+        public DateTime LastLogedIn { get; set; }
 
         /// <summary>
         /// Collection for database
         /// </summary>
+
+        public ICollection<File> Files { get; set; }
         public ICollection<int> ImageId { get; set; }
         public ICollection<int> BusinessID { get; set; }
         public ICollection<Links> Links { get; set; }
