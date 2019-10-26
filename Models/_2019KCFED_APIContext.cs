@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace _2019KCFED_API.Models
 {
-    public class DbConnection : DbContext
+    public class _2019KCFED_APIContext : DbContext
     {
-        public DbConnection(DbContextOptions<DbConnection> options) : base(options)
+        public _2019KCFED_APIContext(DbContextOptions<_2019KCFED_APIContext> options) : base(options)
         {
 
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Business> Business { get; set; }
+        //public DbSet<Business> Business { get; set; }
 
 
 

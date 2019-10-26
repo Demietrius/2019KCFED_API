@@ -12,9 +12,9 @@ namespace _2019KCFED_API.Models
     public class User
     {
         public int Id { get; set; }
-        public string Email { get; set; }
+        //public string Email { get; set; }
         public string UserName { get; set; }
-        public string Password { get; set; }
+        /*public string Password { get; set; }
         public DateTime DateCreated { get; set; }
         public string ShortDescription { get; set; }
         public int Location { get; set; }
@@ -32,7 +32,7 @@ namespace _2019KCFED_API.Models
         public ICollection<Message> Messages { get; set; }
 
         public ICollection<Skill> Skills { get; set; }
-        public ICollection<string> Filters{ get; set; }
+        public ICollection<string> Filters{ get; set; }*/
 
 
     }

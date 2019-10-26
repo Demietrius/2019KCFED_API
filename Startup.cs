@@ -29,7 +29,7 @@ namespace _2019KCFED_API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<DbConnection>(opt =>
+            services.AddDbContext<_2019KCFED_APIContext>(opt =>
                 opt.UseInMemoryDatabase("Database"));
         }
 
