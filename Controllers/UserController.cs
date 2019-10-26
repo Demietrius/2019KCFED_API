@@ -22,10 +22,14 @@ namespace _2019KCFED_API.Controllers
         {
             _context = context;
 
-            testUser.UserId = 1;
-            testUser.UserName = "Test";
-
-            PostUser(testUser);
+            if (_context.Users.Count() == 0)
+            {
+                testUser.Id = 1;
+                testUser.UserName = "Test";
+                _context.Users.Add(testUser);
+                _context.SaveChanges();
+            }
+           
         }
 
         [HttpGet("{id}")]
@@ -46,7 +50,7 @@ namespace _2019KCFED_API.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetUser), new {id = user.UserId}, user);
+            return CreatedAtAction(nameof(GetUser), new {id = user.Id}, user);
         }
 
 
